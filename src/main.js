@@ -1,8 +1,18 @@
 import Vue from 'vue'
-import App from './App.vue'
+import VeeValidate from 'vee-validate'
+import Vuetify from 'vuetify'
 
-Vue.config.productionTip = false
+import { store } from './store'
+import { router } from './helpers'
+import App from './App.vue'
+import 'vuetify/dist/vuetify.min.css'
+
+Vue.use(VeeValidate)
+Vue.use(Vuetify)
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    el: '#app',
+    router,
+    store,
+    render: h => h(App)
+});
